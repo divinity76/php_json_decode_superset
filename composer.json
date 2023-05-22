@@ -1,0 +1,21 @@
+{
+    "name": "divinity76/json_decode_superset",
+    "description": "superset of json_decode allowing decoding of javascript objects (useful for web scraping)",
+    "keywords": [
+        "json decode",
+        "javascript decode",
+        "scraping"
+    ],
+    "homepage": "https://github.com/divinity76/php_json_decode_superset",
+    "type": "library",
+    "license": "Unlicense",
+    "require": {
+        "php": ">=7.4",
+        "ext-mbstring": "*",
+    },
+    "autoload": {
+        "files": [
+            "src/Divinity76/json_decode_superset/json_decode_superset.php"
+        ]
+    }
+}
