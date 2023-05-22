@@ -46,7 +46,16 @@ $tests = array(
         ),
     ),
 );
-
+$skip_slow = in_array("--skip-slow", $argv ?? []);
+if (!$skip_slow) {
+    // now for a very complex test derived from real-world data:
+    $tests[] = array(
+        "json" => file_get_contents(__DIR__ . "/complex_data1.js"),
+        "associative" => true,
+        "flags" => JSON_OBJECT_AS_ARRAY | JSON_THROW_ON_ERROR,
+        "expected" => json_decode(file_get_contents(__DIR__ . "/complex_data1_expected_result.json"), true, 512, JSON_THROW_ON_ERROR),
+    );
+}
 foreach ($tests as $test) {
     $json = $test["json"];
     $associative = $test["associative"];
